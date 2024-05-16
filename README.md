@@ -72,7 +72,7 @@ CMD ["./docker-to-do"]
 Соберите образ
 
 ```
-docker build --tag echo .
+sudo docker build --tag echo .
 ```
 
 
@@ -99,7 +99,23 @@ CMD ["busybox", "httpd", "-f", "-v", "-p", "8082"]
 Соберите образ
 
 ```
-docker build --tag echo .
+sudo docker build --tag echo .
+```
+
+## 5. Запустите образы
+
+Просмотрите список 
+
+```
+docker image ls
+```
+
+```
+sudo docker run -it -p 8080:8080 <имя образа клиента>
+```
+
+```
+sudo docker run -it -p 8082:8082 <имя образа сервера>
 ```
 
 
