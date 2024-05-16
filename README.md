@@ -153,11 +153,15 @@ cd ~/AtomSkills2024/template/frontend
 
 Создайте конфигурационный файл Docker
 
-```touch Dockerfile```
+```
+touch Dockerfile
+```
 
 Откройте файл
 
-```vim Dockerfile```
+```
+vim Dockerfile
+```
 
 Запишите в него следующую конфигурацию
 
