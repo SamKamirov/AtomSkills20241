@@ -93,22 +93,30 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 Используя комманду `git clone` скопируйте репозиторий.
 
 ```
-git clone <>
+git clone git@github.com:SamKamirov/AtomSkills2024.git
 ```
 
 ## 3. Деплой
 
-### В директории с серверной частью приложения создайте файл `Dockerfile` используя команду `touch`
+### Перейдите в директорию серверной части приложения
+
+```
+cd ~/AtomSkills2024/template/backend
+```
+
+Создайте конфигурационный файл Docker
 
 ```
 touch Dockerfile
 ```
 
-Откройте файл и запишите в него следующую конфигурацию
+Откройте файл
 
 ```
 sudo vim Dockerfile
 ```
+
+Запишите в него следующую конфигурацию
 
 ```
 FROM golang:1.22.2
@@ -135,13 +143,21 @@ CMD ["./docker-to-do"]
 sudo docker build --tag echo .
 ```
 
-### В директории с клиентской частью создайте файл `Dockerfile` используя команду `touch`
+### Перейдите в директорию серверной части приложения
+
+```
+cd ~/AtomSkills2024/template/frontend
+```
+
+Создайте конфигурационный файл Docker
 
 ```touch Dockerfile```
 
-Откройте файл и запишите в него следующую конфигурацию
+Откройте файл
 
 ```vim Dockerfile```
+
+Запишите в него следующую конфигурацию
 
 ```
 FROM busybox:1.35
@@ -164,7 +180,7 @@ sudo docker build --tag echo .
 
 ## 4. Запустите образы
 
-Просмотрите список 
+Просмотрите список образов
 
 ```
 docker image ls
