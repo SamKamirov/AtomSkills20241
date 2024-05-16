@@ -195,12 +195,16 @@ docker image ls
 ```
 
 ```
-sudo docker run -it -p 8082:8082 <имя образа клиента>
+sudo docker run -d -p 8080:8080 backend
 ```
 
 ```
-sudo docker run -it -p 8080:8080 <имя образа сервера>
+sudo docker run -d -p 8082:8082 frontend
 ```
+
+## 5. Проверка
+
+Перейдите по ссылке http://45.86.181.61:8082/
 
 
 
