@@ -87,6 +87,36 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
+### Установите пакет файервола
+
+```
+sudo apt-get install ufw -y 
+```
+
+```
+sudo ufw enable 
+```
+
+```
+sudo ufw default allow incoming 
+```
+
+```
+sudo ufw allow http 
+```
+
+```
+sudo ufw allow 80 
+```
+
+```
+sudo ufw allow 8082
+```
+
+```
+sudo ufw status verbose
+```
+
 
 ## 2. Склонируйте репозиторий
 
