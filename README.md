@@ -27,30 +27,49 @@ sudo apt install nodejs npm
 
 node --version
 ```
+
 ### Установка GO
 
-```wget https://dl.google.com/go/go1.22.2.linux-amd64.tar.gz```
+```
+wget https://dl.google.com/go/go1.22.2.linux-amd64.tar.gz
+```
 
-```rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz```
+```
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz
+```
 
-```export PATH=$PATH:/usr/local/go/bin```
+```
+export PATH=$PATH:/usr/local/go/bin
+```
 
 Проверка установки
 
-```go version```
+```
+go version
+```
 
 
 ### Установите Докер
 
-```sudo apt-get update```
+```
+sudo apt-get update
+```
 
-```sudo apt-get install ca-certificates curl```
+```
+sudo apt-get install ca-certificates curl
+```
 
-```sudo install -m 0755 -d /etc/apt/keyrings```
+```
+sudo install -m 0755 -d /etc/apt/keyrings
+```
 
-```sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc```
+```
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+```
 
-```sudo chmod a+r /etc/apt/keyrings/docker.asc```
+```
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+```
 
 ### Добавьте репозиторий:
 ```
@@ -64,22 +83,32 @@ echo \
 sudo apt-get update
 ```
 
-```sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin```
+```
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
 
 
-## 2. Перенос файлов на сервер
+## 2. Склонируйте репозиторий
 
-Используя FTP клиент, например (FileZilla) перенесите файлы клиентской и серверной части приложения на сервер.
+Используя комманду `git clone` скопируйте репозиторий.
+
+```
+git clone <>
+```
 
 ## 3. Деплой
 
 ### В директории с серверной частью приложения создайте файл `Dockerfile` используя команду `touch`
 
-```touch Dockerfile```
+```
+touch Dockerfile
+```
 
 Откройте файл и запишите в него следующую конфигурацию
 
-```sudo vim Dockerfile```
+```
+sudo vim Dockerfile
+```
 
 ```
 FROM golang:1.22.2
