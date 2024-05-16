@@ -30,6 +30,14 @@ sudo apt-get update
 
 `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
+Установите Node.js
+
+```
+sudo apt install nodejs npm
+
+node --version
+```
+
 ## 5.Установка GO.
 
 `wget https://dl.google.com/go/go1.22.2.linux-amd64.tar.gz`
