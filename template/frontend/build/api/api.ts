@@ -16,7 +16,7 @@ const shouldDisplayError = (response: AxiosResponse) => StatusCodeMapping[respon
 
 export const createApi = (): AxiosInstance => {
   const api = axios.create({
-    baseURL: 'http://91.201.54.62:3001',
+    baseURL: 'http://45.86.181.61:8081',
     timeout: 5000
   });
 
