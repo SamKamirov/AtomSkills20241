@@ -29,15 +29,15 @@ node --version
 ```
 ### Установка GO
 
-`wget https://dl.google.com/go/go1.22.2.linux-amd64.tar.gz`
+```wget https://dl.google.com/go/go1.22.2.linux-amd64.tar.gz```
 
-`rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz`
+```rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz```
 
-`export PATH=$PATH:/usr/local/go/bin`
+```export PATH=$PATH:/usr/local/go/bin```
 
 Проверка установки
 
-`go version`
+```go version```
 
 
 ### Установите Докер
@@ -64,7 +64,7 @@ echo \
 sudo apt-get update
 ```
 
-`sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
+```sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin```
 
 
 ## 2. Перенос файлов на сервер
@@ -75,11 +75,11 @@ sudo apt-get update
 
 ### В директории с серверной частью приложения создайте файл `Dockerfile` используя команду `touch`
 
-`touch Dockerfile`
+```touch Dockerfile```
 
 Откройте файл и запишите в него следующую конфигурацию
 
-`sudo vim Dockerfile`
+```sudo vim Dockerfile```
 
 ```
 FROM golang:1.22.2
@@ -108,11 +108,11 @@ sudo docker build --tag echo .
 
 ### В директории с клиентской частью создайте файл `Dockerfile` используя команду `touch`
 
-`touch Dockerfile`
+```touch Dockerfile```
 
 Откройте файл и запишите в него следующую конфигурацию
 
-`vim Dockerfile`
+```vim Dockerfile```
 
 ```
 FROM busybox:1.35
