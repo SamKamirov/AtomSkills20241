@@ -44,7 +44,7 @@ sudo apt-get update
 
 ## 4. Деплой
 
-В директории с серверной частью приложения создайте файл `Dockerfile` используя команду `touch`
+### В директории с серверной частью приложения создайте файл `Dockerfile` используя команду `touch`
 
 `touch Dockerfile`
 
@@ -68,4 +68,24 @@ RUN go build -o ./docker-to-do
 
 CMD ["./docker-to-do"]
 ```
+
+### В директории с клиентской частью создайте файл `Dockerfile` используя команду `touch`
+
+`touch Dockerfile`
+
+Откройте файл и запишите в него следующую конфигурацию
+
+`vim Dockerfile`
+
+```
+FROM busybox:1.35
+
+RUN adduser -D static
+USER static
+WORKDIR app/
+COPY . .
+
+CMD ["busybox", "httpd", "-f", "-v", "-p", "8082"]
+```
+
 
