@@ -10,11 +10,13 @@ sudo apt update
 sudo apt install nginx
 ```
 
-Проверьте работу nginx
+Проверьте работу nginx используя команду
 
 ```
 systemctl status nginx
 ```
+
+или вписав в поисковой строке браузера адрес `http://ip-адрес-сервера`
 
 ### Установка Node
 
