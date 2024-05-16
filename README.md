@@ -142,7 +142,7 @@ CMD ["./docker-to-do"]
 Соберите образ
 
 ```
-sudo docker build --tag fronend .
+sudo docker build --tag backend .
 ```
 
 ### Перейдите в директорию серверной части приложения
@@ -183,7 +183,7 @@ CMD ["busybox", "httpd", "-f", "-v", "-p", "8082"]
 Соберите образ
 
 ```
-sudo docker build --tag backend .
+sudo docker build --tag frontend .
 ```
 
 ## 4. Запустите образы
