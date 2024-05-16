@@ -111,11 +111,11 @@ docker image ls
 ```
 
 ```
-sudo docker run -it -p 8080:8080 <имя образа клиента>
+sudo docker run -it -p 8082:8082 <имя образа клиента>
 ```
 
 ```
-sudo docker run -it -p 8082:8082 <имя образа сервера>
+sudo docker run -it -p 8080:8080 <имя образа сервера>
 ```
 
 
