@@ -1,12 +1,44 @@
-# Инструкция по деплою.
+# Инструкция по деплою
 
-## 1. Перенос файлов на сервер.
+## 1. Подготовка
 
-Используя FTP клиент, например (FileZilla) перенесите файлы клиентской и серверной части приложения на сервер.
+### Установка Nginx
+Установите пакет `nginx`
 
-## 2. Установка.
+```
+sudo apt update
+sudo apt install nginx
+```
 
-Установите Докер
+Проверьте работу nginx
+
+```
+systemctl status nginx
+```
+
+### Установка Node
+
+Установите Node.js
+
+```
+sudo apt install nodejs npm
+
+node --version
+```
+### Установка GO
+
+`wget https://dl.google.com/go/go1.22.2.linux-amd64.tar.gz`
+
+`rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz`
+
+`export PATH=$PATH:/usr/local/go/bin`
+
+Проверка установки
+
+`go version`
+
+
+### Установите Докер
 
 `sudo apt-get update`
 
@@ -24,33 +56,19 @@
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
+
 ```
 sudo apt-get update
 ```
 
 `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
-Установите Node.js
 
-```
-sudo apt install nodejs npm
+## 2. Перенос файлов на сервер
 
-node --version
-```
+Используя FTP клиент, например (FileZilla) перенесите файлы клиентской и серверной части приложения на сервер.
 
-## 5.Установка GO.
-
-`wget https://dl.google.com/go/go1.22.2.linux-amd64.tar.gz`
-
-`rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.2.linux-amd64.tar.gz`
-
-`export PATH=$PATH:/usr/local/go/bin`
-
-Проверка установки
-
-`go version`
-
-## 4. Деплой
+## 3. Деплой
 
 ### В директории с серверной частью приложения создайте файл `Dockerfile` используя команду `touch`
 
@@ -58,7 +76,7 @@ node --version
 
 Откройте файл и запишите в него следующую конфигурацию
 
-`vim Dockerfile`
+`sudo vim Dockerfile`
 
 ```
 FROM golang:1.22.2
@@ -77,13 +95,13 @@ RUN go build -o ./docker-to-do
 CMD ["./docker-to-do"]
 ```
 
+Сохраните файл используя `Shift + :`. Затем введите `q` и нажмите `Enter`.
+
 Соберите образ
 
 ```
 sudo docker build --tag echo .
 ```
-
-
 
 ### В директории с клиентской частью создайте файл `Dockerfile` используя команду `touch`
 
@@ -104,13 +122,15 @@ COPY . .
 CMD ["busybox", "httpd", "-f", "-v", "-p", "8082"]
 ```
 
+Сохраните файл используя `Shift + :`. Затем введите `q` и нажмите `Enter`.
+
 Соберите образ
 
 ```
 sudo docker build --tag echo .
 ```
 
-## 5. Запустите образы
+## 4. Запустите образы
 
 Просмотрите список 
 
