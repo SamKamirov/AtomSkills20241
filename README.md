@@ -93,7 +93,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 Используя комманду `git clone` скопируйте репозиторий.
 
 ```
-git clone git@github.com:SamKamirov/AtomSkills2024.git
+git clone https://github.com/SamKamirov/AtomSkills2024.git
 ```
 
 ## 3. Деплой
@@ -135,7 +135,9 @@ RUN go build -o ./docker-to-do
 CMD ["./docker-to-do"]
 ```
 
-Сохраните файл используя `Shift + :`. Затем введите `q` и нажмите `Enter`.
+Нажмите `Esc`
+Сохраните файл используя `Shift + :`. Затем введите `w` и нажмите `Enter`
+Закройте файл используя `Shift + :`. Затем введите `q` и нажмите `Enter`
 
 Соберите образ
 
@@ -170,7 +172,9 @@ COPY . .
 CMD ["busybox", "httpd", "-f", "-v", "-p", "8082"]
 ```
 
-Сохраните файл используя `Shift + :`. Затем введите `q` и нажмите `Enter`.
+Нажмите `Esc`
+Сохраните файл используя `Shift + :`. Затем введите `w` и нажмите `Enter`
+Закройте файл используя `Shift + :`. Затем введите `q` и нажмите `Enter`
 
 Соберите образ
 
