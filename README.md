@@ -69,6 +69,14 @@ RUN go build -o ./docker-to-do
 CMD ["./docker-to-do"]
 ```
 
+Соберите образ
+
+```
+docker build --tag echo .
+```
+
+
+
 ### В директории с клиентской частью создайте файл `Dockerfile` используя команду `touch`
 
 `touch Dockerfile`
@@ -87,5 +95,13 @@ COPY . .
 
 CMD ["busybox", "httpd", "-f", "-v", "-p", "8082"]
 ```
+
+Соберите образ
+
+```
+docker build --tag echo .
+```
+
+
 
 
