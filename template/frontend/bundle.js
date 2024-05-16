@@ -47181,7 +47181,7 @@ var StatusCodeMapping = (_a = {},
 var shouldDisplayError = function (response) { return StatusCodeMapping[response.status]; };
 var createApi = function () {
     var api = axios__WEBPACK_IMPORTED_MODULE_1__["default"].create({
-        baseURL: 'http://213.189.219.165:8081',
+        baseURL: 'http://45.86.181.61:8081',
         timeout: 5000
     });
     api.interceptors.request.use(function (config) {
